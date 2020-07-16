@@ -7,12 +7,13 @@ WORKDIR /tmp/docker_build
 RUN apk -U upgrade
 
 # Install packages
-RUN apk add \
-	byacc clang cmake curl flex git go make \
-	mingw-w64-gcc p7zip python3 unzip xxd \
-	\
-	freetype-dev libev-dev glew-dev glfw-dev sdl2-dev
-
+RUN apk add curl p7zip unzip xxd	# Not directly dev-related
+RUN apk add byacc flex git	# Dev-related but not compiler/build tool
+RUN apk add cmake make	# Build tools
+RUN apk add clang go mingw-w64-gcc	# Compilers
+RUN apk add python3	# Interpreters
+RUN apk add glew-dev glfw-dev sdl2-dev	# Graphics libraries
+RUN apk add freetype-dev libev-dev	# Misc libraries
 
 # Build glew for mingw
 RUN curl -LO https://sourceforge.net/projects/glew/files/glew/$glew_ver/glew-$glew_ver.zip
