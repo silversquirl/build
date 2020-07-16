@@ -26,7 +26,7 @@ WORKDIR ..
 RUN curl -LO https://github.com/glfw/glfw/releases/download/$glfw_ver/glfw-$glfw_ver.zip
 RUN unzip glfw-$glfw_ver.zip
 WORKDIR glfw-$glfw_ver
-RUN cmake -DCMAKE_TOOLCHAIN_FILE=CMake/x64_64-w64-mingw32.cmake -DCMAKE_INSTALL_PREFIX=/usr/x86_64-w64-mingw32 .
+RUN cmake -DCMAKE_TOOLCHAIN_FILE=CMake/x86_64-w64-mingw32.cmake -DCMAKE_INSTALL_PREFIX=/usr/x86_64-w64-mingw32 .
 RUN make -j$(nproc)
 WORKDIR ..
 
