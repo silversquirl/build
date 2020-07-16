@@ -28,6 +28,7 @@ RUN unzip glfw-$glfw_ver.zip
 WORKDIR glfw-$glfw_ver
 RUN cmake -DCMAKE_TOOLCHAIN_FILE=CMake/x86_64-w64-mingw32.cmake -DCMAKE_INSTALL_PREFIX=/usr/x86_64-w64-mingw32 .
 RUN make -j$(nproc)
+RUN make install
 WORKDIR ..
 
 # Clean up
