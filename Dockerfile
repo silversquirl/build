@@ -13,6 +13,7 @@ RUN apk add cmake make	# Build tools
 RUN apk add clang go mingw-w64-gcc	# Compilers
 RUN apk add python3	# Interpreters
 RUN apk add glew-dev glfw-dev sdl2-dev	# Graphics libraries
+RUN apk add libxcb-dev libxcb-static libx11-dev libx11-static	# X11 libraries
 RUN apk add freetype-dev libev-dev	# Misc libraries
 
 # Build glew for mingw
