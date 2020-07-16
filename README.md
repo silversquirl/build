@@ -15,6 +15,7 @@ This container includes a selection of build tools and language interpreters:
 - clang
 - cmake
 - curl
+- emscripten
 - flex
 - git
 - golang
