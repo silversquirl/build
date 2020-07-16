@@ -19,7 +19,7 @@ RUN curl -LO https://sourceforge.net/projects/glew/files/glew/$glew_ver/glew-$gl
 RUN unzip glew-$glew_ver.zip
 WORKDIR glew-$glew_ver
 RUN make -j$(nproc) SYSTEM=linux-mingw64 HOST=x86_64-w64-mingw32
-RUN make install.include install.lib DESTDIR=/usr/x86_64-w64-mingw32 LIBDIR=/lib BINDIR=/bin INCDIR=/include
+RUN make install.include install.lib DESTDIR=/usr/x86_64-w64-mingw32 LIBDIR=/lib BINDIR=/bin INCDIR=/include/GL
 WORKDIR ..
 
 # Build glfw for mingw
